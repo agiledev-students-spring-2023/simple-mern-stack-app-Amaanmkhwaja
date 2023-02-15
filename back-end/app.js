@@ -22,6 +22,20 @@ mongoose
 const { Message } = require('./models/Message')
 const { User } = require('./models/User')
 
+const aboutData = {
+  name: "Amaan Khwaja",
+  photo: "https://i6.cims.nyu.edu/~ak7094/me.jpg",
+  text: ['I am a university student studying computer science. I am passionate about technology and eager to learn as much as I can about the field. I spend a lot of my free time practicing coding skills, researching the latest industry trends, and exploring new software applications.',
+          'When I am not coding, I love playing soccer with my friends. I enjoy the competitive nature of the sport and find that it helps me relieve stress after a long day of classes. I also like to unwind by watching TV shows. My favorites include sci-fi and action genres, which allow me to escape from the demands of academic work and immerse myself in another world.',
+          'With graduation quickly approaching, I am actively seeking software engineering jobs to jumpstart my career. I\'ve been building my professional network and gaining experience through internships and personal projects. I am excited to apply my skills in a real-world setting and make meaningful contributions to the industry.'
+        
+        ],
+};
+
+app.get('/about', async (req, res) => {
+  res.json(aboutData)
+})
+
 // a route to handle fetching all messages
 app.get('/messages', async (req, res) => {
   // load all messages from database
